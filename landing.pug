@@ -1,26 +1,14 @@
--var titulo = "Título Principal"
--var titulos = ["Título Principal", "Subtítulo 1", "Subtítulo 2", "Subtítulo 3"]
--var usuario = "David"
-doctype html
-html
-	head
-		meta(charset="UTF-8")
-		link(rel="stylesheet",href='css/ejercicio-pug.css')
-	body
-		header
-			h1 PlatziGames
-			if usuario
-				a Hola #{usuario}
-			else 
-				a.boton Registro
+extend componentes/plantilla.pug
+block contenidos
 		section.intro
 			.intro__imagen: img(src='images/imagen.png')
 			.intro__contenido
 				h2= titulos[0]
 				p 
 					| Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam placeat tempore corrupti dolorum ex quo explicabo repellat. Consequatur delectus
-					span praesentium voluptatem asperiores porro animi error, odio dolorum, ipsam illo quis?
+					span praesentium voluptatem asperiores porro animi error, odio dolorum, ipsam illo quis?30
 				a.boton Leer Más
-		ul 
-			each titulo in titulos 
-				li=titulo
+		main.contenido
+			+caja('imagen.png',titulos[1],'Lorem ipsum dolor sit amet')
+			+caja('imagen.png',titulos[2],'Lorem ipsum dolor sit amet')
+			+caja('imagen.png',titulos[3],'Lorem ipsum dolor sit amet')
